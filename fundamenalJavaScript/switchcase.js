@@ -1,26 +1,29 @@
-var day;
-switch (new Date().getDay()) {
-    case 0:
-    day = "Sunday";
+var date = new Date();
+
+var today = date.getDay();
+
+switch(today){
+  case 0:
+    console.log('Today is Sunday');
     break;
-  case 1:
-    day = "Monday";
+  case 1: 
+    console.log('Today is Monday');
     break;
   case 2:
-    day = "Tuesday";
+    console.log('Today is Tuesday');
     break;
-  case 3:
-    day = "Wednesday";
+  case 3: 
+    console.log('Today is Wednesday');
     break;
   case 4:
-    day = "Thursday";
+    console.log('Today is Thurday');
     break;
-  case 5:
-    day = "Friday";
+  case 5: 
+    console.log('Today is Friday');
     break;
-  case  6:
-    day = "Saturday";
+  case 6:
+    console.log('Today is Saturday')
     break;
-    default:
-        console.log('Lalbar');
+
+  default: console.log('The Number is not valid!');
 }
