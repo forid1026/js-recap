@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        article{
+            border: 1px solid lightsalmon;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        
+        <article>
+            <p>article- 1</p>
+            <p class="author">author-1</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia dolorum tempora facere reprehenderit porro ullam modi asperiores explicabo a eaque.</p>
+        </article>
+        <article class="special">
+            <h3>article- 2</h3>
+            <p class="author">author-2</p>
+            <p>Earum facilis accusantium sapiente! Quis, ipsum obcaecati. Laborum, porro magni? Illo culpa saepe recusandae sed voluptatum provident porro corporis mollitia?</p>
+        </article>
+        <article class="special">
+            <h3>article- 3</h3>
+            <p class="author" id="authorName" title="i am a special author">author-3</p>
+            <p>Odio culpa repellat fuga aspernatur? Incidunt nesciunt aspernatur consequatur suscipit laborum expedita voluptatum ratione atque optio repellat? Ea, nam voluptatibus.</p>
+        </article>
+        <article>
+            <p>article- 4</p>
+            <p class="author">author-4</p>
+            <p>Numquam, non culpa? Eaque quam, mollitia, nesciunt pariatur dolorem ut soluta assumenda iure ipsa modi animi, at similique! Dignissimos, dolorem.</p>
+        </article>
+        <article id="last-article">
+            <h3>Article 5</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, rem?</p>
+        </article>
+        <article >
+            <ul id="gift-item">
+                <li>list - 1</li>
+                <li>list - 2</li>
+                <li>list - 3</li>
+                <li>list - 4</li>
+            </ul>
+        </article>
+        
+    </main>
+
+    <script>
+        var authors = document.querySelectorAll('.special h3');
+        for(var i = 0; i < authors.length; i++){
+            var element = authors[i];   
+            console.log(element);
+            element.setAttribute('title', 'Everyone is same author')
+            element.style.color = 'white';
+            element.style.backgroundColor = 'purple';
+        }
+
+        var article = document.getElementById('last-article');
+        var addedNewElement = document.createElement('p');
+        addedNewElement.innerHTML = ' added new element using javaScript';
+        article.appendChild(addedNewElement);
+        
+        var list = document.getElementById('gift-item');
+        var listItem = document.createElement('li');
+        listItem.innerHTML = 'Special Gift For Her';
+        list.appendChild(listItem);
+        listItem.style.color = 'red';
+
+    </script>
+</body>
+</html>
