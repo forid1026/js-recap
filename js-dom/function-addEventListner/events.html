@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT IN JS</title>
+</head>
+
+<body>
+    <h1 onclick="clickMe()">Exploring Event</h1>
+    <button id="btn1" onclick="alert('hello event')">Click Me!</button>
+    <h3 >i am learning javascript</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci atque cupiditate laborum alias temporibus voluptates a ipsa quia exercitationem.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, odio?</p>
+    <button id="btn4">click me - 1</button>
+    <button id="btn2">click me - 2</button>
+    <button id="btn3">click me - 3</button>
+    <button id="btn5">Click me - 5</button>
+
+
+    
+    <script>
+        function handleClick(){
+            console.log('third button clicked')
+            document.body.style.backgroundColor = "tomato";
+            document.body.style.color = "white";
+        }
+        var btn = document.getElementById('btn2');
+        btn.onclick = function(){
+            document.body.style.backgroundColor = "purple";
+            document.body.style.color = "white";
+        }
+
+        var btn3  = document.getElementById('btn3');
+        btn3.onclick = handleClick; 
+
+        var btn1 = document.getElementById('btn4');
+        btn1.addEventListener('click', handleClick);
+        
+        document.getElementById('btn5').addEventListener('click', function(){
+            document.body.style.color = "red";
+        })
+    </script> 
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT BUBBLE</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Event Bubble</h1>
+        <ul id="myList">
+            <li id="firstItem" class="item">list item - 1</li>
+            <li class="item">list item - 2</li>
+            <li class="item">list item - 3</li>
+            <li class="item">list item - 4</li>
+            <li class="item">list item - 5</li>
+        </ul>
+        <button id="btn">Added Item</button>
+    </div>
+
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            var addItem = document.getElementById('myList');
+            var newItem = document.createElement('li');
+        newItem.innerHTML = "added new item";
+        addItem.appendChild(newItem); 
+        });
+
+        document.getElementById('myList').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+        
+    </script>
+</body>
+</html>
